@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
+import Header from '@/components/Header';
 
 const Index = () => {
   const courses = [
@@ -63,23 +64,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="border-b border-gray-100 bg-white/80 backdrop-blur-sm fixed w-full top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
-            <div className="flex items-center space-x-2">
-              <Icon name="Code" size={24} className="text-blue-600" />
-              <span className="text-xl font-bold text-gray-900">IT Школа</span>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#courses" className="text-gray-600 hover:text-gray-900 transition-colors">Курсы</a>
-              <a href="#teachers" className="text-gray-600 hover:text-gray-900 transition-colors">Преподаватели</a>
-              <a href="#about" className="text-gray-600 hover:text-gray-900 transition-colors">О нас</a>
-              <Button variant="outline" size="sm">Войти</Button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-white">
@@ -87,13 +72,13 @@ const Index = () => {
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               Изучайте IT с{' '}
-              <span className="text-blue-600">лучшими экспертами</span>
+<span className="text-primary">лучшими экспертами</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               Получите востребованную IT-профессию за 4-8 месяцев. Начните с бесплатного демо-урока и убедитесь в качестве обучения
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
+              <Button size="lg" className="px-8 py-3">
                 <Icon name="Play" size={20} className="mr-2" />
                 Начать бесплатно
               </Button>
@@ -139,7 +124,7 @@ const Index = () => {
               <Card key={index} className="border-gray-200 hover:border-blue-300 transition-all duration-300 hover:shadow-lg">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
-                    <Badge variant="secondary" className="bg-blue-50 text-blue-700 border-blue-200">
+                    <Badge variant="secondary">
                       {course.level}
                     </Badge>
                     {course.demo && (
@@ -169,7 +154,7 @@ const Index = () => {
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                    <Button className="w-full">
                       <Icon name="Play" size={16} className="mr-2" />
                       Смотреть демо-урок
                     </Button>
@@ -209,7 +194,7 @@ const Index = () => {
                       />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">{teacher.name}</h3>
-                    <p className="text-blue-600 text-sm font-medium mb-1">{teacher.role}</p>
+                    <p className="text-primary text-sm font-medium mb-1">{teacher.role}</p>
                     <p className="text-gray-600 text-sm mb-2">{teacher.company} • {teacher.experience}</p>
                     
                     <div className="flex flex-wrap gap-1 justify-center mt-4">
@@ -232,20 +217,20 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-blue-600">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-primary">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Начните свой путь в IT уже сегодня
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-primary-foreground/80 mb-8">
             Посетите бесплатный демо-урок и убедитесь в качестве нашего обучения
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="outline" className="bg-white text-blue-600 hover:bg-gray-50 border-white px-8 py-3">
+            <Button size="lg" variant="secondary" className="px-8 py-3">
               <Icon name="Play" size={20} className="mr-2" />
               Записаться на демо-урок
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-white hover:bg-blue-700 px-8 py-3">
+            <Button size="lg" variant="outline" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10 px-8 py-3">
               <Icon name="Phone" size={20} className="mr-2" />
               Получить консультацию
             </Button>
@@ -259,8 +244,8 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Icon name="Code" size={24} className="text-blue-400" />
-                <span className="text-xl font-bold">IT Школа</span>
+                <Icon name="GraduationCap" size={24} className="text-primary" />
+                <span className="text-xl font-bold">TechSchool</span>
               </div>
               <p className="text-gray-400 text-sm">
                 Лучшее IT-образование для построения успешной карьеры в технологиях
@@ -303,7 +288,7 @@ const Index = () => {
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-            © 2024 IT Школа. Все права защищены.
+            © 2024 TechSchool. Все права защищены.
           </div>
         </div>
       </footer>
